@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
 const Home = () => {
-  
+
 
 
   return (
     <>
-      <div className=' font-josefin' style={{backgroundImage: "url('')"}}>
+      <div className=' font-josefin' style={{ backgroundImage: "url('')" }}>
         <Navbar />
 
         <div className=''>{/*Info Section*/}
@@ -40,7 +40,7 @@ const Home = () => {
                 <span className="relative text-[#70adca] group-hover:text-white"><Link to={'/signup'}>Signup Now</Link></span>
               </button>
             </div>
-            
+
           </div>
         </div>
         <div className='flex justify-evenly align-middle bg-stone-200 p-10'>{/*footer */}
@@ -70,7 +70,7 @@ const Home = () => {
           </div>
         </div>
         <div className='flex justify-evenly align-middle bg-slate-900 p-3 text-stone-400'>
-        Copyright ©2024 All rights reserved | This  website is made with love by Team BackSpace :)
+          Copyright ©2024 All rights reserved | This  website is made with love by Team BackSpace :)
         </div>
       </div>
     </>

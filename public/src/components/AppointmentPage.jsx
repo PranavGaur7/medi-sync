@@ -31,24 +31,69 @@ export default function AppointmentPage() {
         </div>
 
         <div className=" bg-stone-100 p-10">
-            <div className="flex justify-evenly align-middle text-center ">
-                <div className=" rounded-md border p-3 bg-white">
+            <div className="flex justify-evenly align-middle text-center my-3">
+                <button className=" rounded-md border p-3 bg-white">
                     <p>Doctor: Ramesh Signh</p>
-                    <p>Availabe: Weekdays</p>
+                    <p>Available: Weekdays</p>
                     <p>TimeSlot: 9:00 - 12:00</p>
-                </div>
-                <div className=" rounded-md border p-3 bg-white">
+                </button>
+                <button className=" rounded-md border p-3 bg-white">
                     <p>Doctor: Ramesh Signh</p>
-                    <p>Age: 19</p>
-                    <p>Diseases: Typhoid</p>
-                </div>
-                <div className=" rounded-md border p-3 bg-white">
+                    <p>Available: Weekdays</p>
+                    <p>TimeSlot: 9:00 - 12:00</p>
+                </button>
+                <button className=" rounded-md border p-3 bg-white">
                     <p>Patient Name: Mohit Ranjan</p>
-                    <p>Age: 19</p>
+                    <p>Available: Mon-Thr</p>
                     <p>Diseases: Typhoid</p>
-                </div>
+                </button>
             </div>
-            
+            <div className="flex justify-evenly align-middle text-center my-3 ">
+                <button className=" rounded-md border p-3 bg-white">
+                    <p>Doctor: Ramesh Signh</p>
+                    <p>Available: Weekdays</p>
+                    <p>TimeSlot: 9:00 - 12:00</p>
+                </button>
+                <button className=" rounded-md border p-3 bg-white">
+                    <p>Doctor: Ramesh Signh</p>
+                    <p>Available: Weekdays</p>
+                    <p>TimeSlot: 9:00 - 12:00</p>
+                </button>
+                <button className=" rounded-md border p-3 bg-white">
+                    <p>Patient Name: Mohit Ranjan</p>
+                    <p>Available: Mon-Thr</p>
+                    <p>Diseases: Typhoid</p>
+                </button>
+            </div>
+        </div>
+        <div className='flex justify-evenly align-middle bg-stone-200 p-10'>{/*footer */}
+            <div className='mx-2 text-center'>
+                <p className=" font-bold">Contact Us</p>
+                <ul>
+                    <li>+91 8319382832 - Reception</li>
+                    <li>+91 8319382832 - Hospital Manager</li>
+                </ul>
+            </div>
+            <div className='mx-2 text-center'>
+                <p className=" font-bold">Branches</p>
+                <ul>
+                    <li>Cardiology</li>
+                    <li>Neurology</li>
+                    <li>Dermatology</li>
+                    <li>Physciatrist</li>
+                    <li>Many More</li>
+                </ul>
+            </div>
+            <div className='mx-2 text-center'>
+                <p className=" font-bold">Explore</p>
+                <ul>
+                    <li>WHO Guidelines</li>
+                    <li>Healthcare Tips</li>
+                </ul>
+            </div>
+        </div>
+        <div className='flex justify-evenly align-middle bg-slate-900 p-3 text-stone-400'>
+            Copyright ©2024 All rights reserved | This  website is made with love by Team BackSpace :)
         </div>
     </>
 }
