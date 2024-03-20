@@ -46,14 +46,17 @@ const userSchema = new mongoose.Schema({
     },
     age:{
         type:Number,
+        default: null,
         required:true,
     },
     experience:{
         type:Number,
+        default:null,
         required:true,
     },
     department:{
         type:String,
+        default:null,
         enum:["Cardio", "Neuro", "Orthopadics", "ENT", "Pediatries" ,"Sexologist", "Physciatrist", "Dermatology" ],
     },
     role:{
