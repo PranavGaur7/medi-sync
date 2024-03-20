@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   
+
+
   return (
     <>
       <div className=' font-josefin' style={{backgroundImage: "url('')"}}>
@@ -60,12 +62,34 @@ const Home = () => {
             
           </div>
         </div>
-        <div className='h-40 bg-stone-200'>{/*footer */}
-          <div>
+        <div className='flex justify-evenly align-middle bg-stone-200 p-10'>{/*footer */}
+          <div className='mx-2 text-center'>
+            <p className=" font-bold">Contact Us</p>
             <ul>
-              <li>User</li>
+              <li>+91 8319382832 - Reception</li>
+              <li>+91 8319382832 - Hospital Manager</li>
             </ul>
           </div>
+          <div className='mx-2 text-center'>
+            <p className=" font-bold">Branches</p>
+            <ul>
+              <li>Cardiology</li>
+              <li>Neurology</li>
+              <li>Dermatology</li>
+              <li>Physciatrist</li>
+              <li>Many More</li>
+            </ul>
+          </div>
+          <div className='mx-2 text-center'>
+            <p className=" font-bold">Explore</p>
+            <ul>
+              <li>WHO Guidelines</li>
+              <li>Healthcare Tips</li>
+            </ul>
+          </div>
+        </div>
+        <div className='flex justify-evenly align-middle bg-slate-900 p-3 text-stone-400'>
+        Copyright ©2024 All rights reserved | This  website is made with love by Team BackSpace :)
         </div>
       </div>
     </>
