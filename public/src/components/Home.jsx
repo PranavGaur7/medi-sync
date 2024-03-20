@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   
@@ -16,8 +17,8 @@ const Home = () => {
               <li className='mx-2'><button>About</button></li>
               <li className='mx-2'><button>Doctors</button></li>
               <li className='mx-2'><button>Contact</button></li>
-              <li className='mx-2'><button>Login</button></li>
-              <li className='mx-2'><button>Signup</button></li>
+              <li className='mx-2'><button><Link to={'login'}>Login</Link></button></li>
+              <li className='mx-2'><button><Link to={'/signup'}>Signup</Link></button></li>
             </ul>
           </div>
           <div className='my-auto'>
@@ -28,7 +29,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className=''>
+        <div className=''>{/*Info Section*/}
           <div className='flex justify-center align-middle bg-stone-50 p-32'>
             <div className='p-20 w-1/2'>
               <p>We are here for You</p>
@@ -36,7 +37,7 @@ const Home = () => {
               <p className=''>By prioritizing convenience, accessibility, and accuracy, our platform aims to transform healthcare delivery, ensuring timely intervention and improving overall patient outcomes.</p>
               <button className="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg border mt-10">
                 <div className="absolute inset-0 w-3 bg-[#70adca] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                <span className="relative text-[#70adca] group-hover:text-white">Make An Appointment</span>
+                <span className="relative text-[#70adca] group-hover:text-white"><Link to={'/signup'}>Make An Appointment</Link></span>
               </button>
             </div>
             <div>
@@ -53,10 +54,17 @@ const Home = () => {
               <p className=''>Through cutting-edge AI technology and web development tools, our platform offers a comprehensive solution for diagnosing and treating illnesses. Patients can input their symptoms into the portal, where our AI model predicts potential diseases in real-time. This information enables us to connect patients with suitable healthcare professionals and reserve hospital beds for necessary procedures swiftly and efficiently.</p>
               <button className="group relative h-12 w-36 overflow-hidden rounded-lg bg-white text-lg border mt-10">
                 <div className="absolute inset-0 w-3 bg-[#70adca] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                <span className="relative text-[#70adca] group-hover:text-white">Sign Up Now</span>
+                <span className="relative text-[#70adca] group-hover:text-white"><Link to={'/signup'}>Signup Now</Link></span>
               </button>
             </div>
             
+          </div>
+        </div>
+        <div className='h-40 bg-stone-200'>{/*footer */}
+          <div>
+            <ul>
+              <li>User</li>
+            </ul>
           </div>
         </div>
       </div>
