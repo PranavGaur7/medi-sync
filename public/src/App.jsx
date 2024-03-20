@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Home from "./components/Home"
+import DepartMent from "./components/DepartMent"
 
  
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/signup" element={<Signup/>} />
+          <Route path="/department" element={<DepartMent/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/" element={<Home/>} />
         </Routes>
