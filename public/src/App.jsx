@@ -4,6 +4,7 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Home from "./components/Home"
 import DepartMent from "./components/DepartMent"
+import AppointmentPage from "./components/AppointmentPage"
 
  
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/department" element={<DepartMent/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/" element={<Home/>} />
+          <Route path="/appointment" element={<AppointmentPage />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />
