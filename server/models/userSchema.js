@@ -21,38 +21,28 @@ const userSchema = new mongoose.Schema({
     },
     gender:{
         type:String,
-        required:true,
+        default:"male"
     },
     weight:{
         type:Number,
-        default: null, // Default value for weight
-        required: function(){
-            return this.role !== "Doctor";
-        },
+        default: null, 
     },
     phone:{
         type:Number,
-        default: null, // Default value for phone
-        required: function(){
-            return this.role !== "Doctor";
-        },
+        default: null, 
     },
     bloodgroup:{
         type:String,
         default: null, // Default value for bloodgroup
-        required: function(){
-            return this.role !== "Doctor";
-        },
+        
     },
     age:{
         type:Number,
         default: null,
-        required:true,
     },
     experience:{
         type:Number,
         default:null,
-        required:true,
     },
     department:{
         type:String,
