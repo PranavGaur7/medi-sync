@@ -15,8 +15,9 @@ app.use(express.json());
 app.use(cors());
 
 const authRoutes = require("./routes/auth");
+const appointRoutes = require("./routes/appointmentRoutes");
 app.use("/medisync", authRoutes);
-
+app.use("/appointment", appointRoutes);
 
 
 app.listen(PORT, () => {

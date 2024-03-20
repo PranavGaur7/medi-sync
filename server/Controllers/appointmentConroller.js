@@ -1,5 +1,5 @@
 const Appointment = require("../models/appointmentSchema");
-const Doctor = require("../models/doctorSchema"); // Assuming you have a Doctor model
+const User = require("../models/userSchema"); // Assuming you have a Doctor model
 require("dotenv").config();
 
 exports.appointment = async (req, res) => {
@@ -7,7 +7,7 @@ exports.appointment = async (req, res) => {
         const { name, disease, doctorName, time } = req.body;
 
         // Check if the doctor exists
-        const doctor = await Doctor.findOne({ name: doctorName });
+        const doctor = await User.findOne({ name: doctorName });
         if (!doctor) {
             return res.status(404).json({ message: "Doctor not found" });
         }

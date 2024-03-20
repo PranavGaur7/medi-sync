@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
         required:true,
         validate:{
             validator: function(value){
-                return value.length>=6;
+                return value.length >= 6;
             },
             message:"Password must be of length 6",
         }
@@ -25,20 +25,23 @@ const userSchema = new mongoose.Schema({
     },
     weight:{
         type:Number,
+        default: null, // Default value for weight
         required: function(){
-            return this.role !=="Doctor";
+            return this.role !== "Doctor";
         },
     },
     phone:{
         type:Number,
+        default: null, // Default value for phone
         required: function(){
-            return this.role !=="Doctor";
+            return this.role !== "Doctor";
         },
     },
     bloodgroup:{
         type:String,
+        default: null, // Default value for bloodgroup
         required: function(){
-            return this.role !=="Doctor";
+            return this.role !== "Doctor";
         },
     },
     age:{
@@ -56,7 +59,8 @@ const userSchema = new mongoose.Schema({
     role:{
         type:String,
         enum:["Doctor", "Patient"],
+        default: "Patient" // Default value for role
     }
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("User", userSchema); // Changed model name to "User"
