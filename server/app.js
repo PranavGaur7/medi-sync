@@ -17,7 +17,7 @@ app.use(cors());
 const authRoutes = require("./routes/auth");
 const appointRoutes = require("./routes/appointmentRoutes");
 app.use("/medisync", authRoutes);
-app.use("/appointment", appointRoutes);
+app.use("/doctor", appointRoutes);
 
 
 app.listen(PORT, () => {
