@@ -12,11 +12,16 @@ require('./config/userDatabase').connect();
 app.use(express.json());
 
 // Use CORS middleware
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:5173"],
+    methods: ["GET", "POST"],
+    credentials: true,
+}))
 
 const authRoutes = require("./routes/auth");
+const appointRoutes = require("./routes/appointmentRoutes");
 app.use("/medisync", authRoutes);
-
+app.use("/doctor", appointRoutes);
 
 
 app.listen(PORT, () => {

@@ -6,7 +6,6 @@ require("dotenv").config();
 exports.signup = async (req, res) => {
     try {
         const userData = req.body;
-
         // Check if user already exists
         const existingUser = await User.findOne({ email: userData.email });
 
@@ -21,11 +20,11 @@ exports.signup = async (req, res) => {
         const hashedPassword = await bcrypt.hash(userData.password, 10);
 
         // Create new user
-        await User.create({
+        const userCreates = await User.create({
             ...userData,
             password: hashedPassword
         });
-
+        console.log(userCreates);
         return res.status(200).json({
             success: true,
             message: "User created successfully"

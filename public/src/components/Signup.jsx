@@ -15,7 +15,7 @@ const Signup = ({ setIsloggedIn, isLoggedIn }) => {
     }
   })
   const [data, setData] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: ""
@@ -26,22 +26,22 @@ const Signup = ({ setIsloggedIn, isLoggedIn }) => {
 
       if (handleValidation()) {
         const { password, confirmPassword, username, email } = data;
-        // const user = await axios.post(registerRoutes,{
-        //   username,email,password
-        // },{
-        //   withCredentials: true
-        // })
-        // if(user.data.code === 11000 && user.data.keyValue.hasOwnProperty('username')){
-        //   toast.error("username should be unique", toastContent)
-        // }
-        // else if(user.data.code === 11000 && user.data.keyValue.hasOwnProperty('email')){
-        //   toast.error("email should be unique", toastContent)
-        // }
-        // else{
-        //   setIsloggedIn(true);
-        //   toast.success("Signed in", toastContent)
-        //   navigate('/avatar');
-        // }
+        const user = await axios.post("http://localhost:4000/medisync/signup",{
+          name:username,email,password
+        },{
+          withCredentials: true
+        })
+        if(user.data.code === 11000 && user.data.keyValue.hasOwnProperty('username')){
+          toast.error("username should be unique", toastContent)
+        }
+        else if(user.data.code === 11000 && user.data.keyValue.hasOwnProperty('email')){
+          toast.error("email should be unique", toastContent)
+        }
+        else{
+          // setIsloggedIn(true);
+          toast.success("Signed in", toastContent)
+          navigate('/');
+        }
       }
     }
     catch (err) {

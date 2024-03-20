@@ -13,9 +13,8 @@ const Login = ({ setIsloggedIn, isLoggedIn }) => {
             navigate('/')
         }
     })
-    console.log(isLoggedIn);
     const [data, setData] = useState({
-        username: "",
+        email: "",
         password: "",
     })
     const toastContent = {
@@ -28,16 +27,17 @@ const Login = ({ setIsloggedIn, isLoggedIn }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (handleValidation()) {
-            const { password, username } = data;
+            const { password, email } = data;
             try {
 
-                // const user = await axios.post(loginRoutes, {
-                //   username, password
-                // }, {
-                //   withCredentials: true
-                // })
+                const user = await axios.post("http://localhost:4000/medisync/login", {
+                  email, password
+                }, {
+                  withCredentials: true
+                })
                 if (user.status === 200) {
-                    setIsloggedIn(true);
+                    // setIsloggedIn(true);
+                    console.log(user);
                     toast.success("Logged in", toastContent)
                     // setTimeout(() => {
 
@@ -48,7 +48,7 @@ const Login = ({ setIsloggedIn, isLoggedIn }) => {
             }
             catch (err) {
                 if (err.response && err.response.status === 404) {
-                    toast.error("Username not found", toastContent);
+                    toast.error("email not found", toastContent);
                 } else if (err.response && err.response.status === 401) {
                     toast.error("Invalid password", toastContent);
                 } else {
@@ -59,12 +59,8 @@ const Login = ({ setIsloggedIn, isLoggedIn }) => {
     }
 
     const handleValidation = () => {
-        const { password, username } = data;
-        if (username.length < 4) {
-            toast.error("Username should be atleast 4 characters", toastContent)
-            return false;
-        }
-        else if (password.length < 4) {
+        const { password, email } = data;
+        if (password.length < 4) {
 
             toast.error("Password should be atleast 6 characters", toastContent)
             return false;
@@ -83,8 +79,8 @@ const Login = ({ setIsloggedIn, isLoggedIn }) => {
                         <h2>Please Login</h2>
                         <form onSubmit={handleSubmit}>
                             <label className="col-lg-6 d-block m-auto ">
-                                <span className="d-block my-2 fs-5 fw-semibold ">Username</span>
-                                <input type="text" placeholder='John Doe' className="w-100" name="username" value={data.username} onChange={handleChange} />
+                                <span className="d-block my-2 fs-5 fw-semibold ">Email</span>
+                                <input type="text" placeholder='John Doe' className="w-100" name="email" value={data.email} onChange={handleChange} />
                             </label>
                             <label className="col-lg-6 d-block m-auto  ">
                                 <span className="d-block my-2 fs-5 fw-semibold ">Password</span>
