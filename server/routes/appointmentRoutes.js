@@ -3,6 +3,6 @@ const router = express()
 
 const { appointment } = require("../Controllers/appointmentConroller");
 
-router.post("/appointment", appointment);
+router.post("/appointments", appointment);
 
 module.exports = router;
