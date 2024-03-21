@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <>
-      <div className=' font-josefin' style={{ backgroundImage: "url('')" }}>
+      <div className='font-josefin' style={{ backgroundImage: "url('')" }}>
         <Navbar />
 
         <div className=''>{/*Info Section*/}
