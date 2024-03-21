@@ -1,34 +1,18 @@
 import Navbar from "./Navbar"
 
 export default function AppointmentPage() {
-    const [appointments, setAppointments] = useState([]);
-
-    useEffect(() => {
-        fetchAppointments();
-    }, []);
-
-    const fetchAppointments = async () => {
-        try {
-            const response = await axios.get('http://localhost:4000/doctor/appointments');
-            setAppointments(response.data);
-        } catch (error) {
-            console.error('Error fetching appointments:', error);
-        }
-    };
 
     return <>
         <Navbar />
         <div className=" bg-stone-100 p-10">
-        {appointments.map(appointment => (
-                    <div key={appointment._id} className=" w-1/3 text-center mx-auto bg-white mb-4">
-                        <div className=" rounded-md border">
-                            <p>Patient Name: {appointment.name}</p>
-                            <p>Disease: {appointment.disease}</p>
-                            <p>Doctor: {appointment.doctor}</p>
-                            <p>Time: {appointment.time}</p>
-                        </div>
-                    </div>
-        ))}
+            <div className=" w-1/3 text-center mx-auto bg-white mb-4 ">
+                <div className=" rounded-md border">
+                    <p>Patient Name: Mohit Ranjan</p>
+                    <p>Age: 19</p>
+                    <p>Diseases: Typhoid</p>
+
+                </div>
+            </div>
             <div className="flex justify-center align-middle">
                 <div className="w-[20em]">
                     <img src="src/assets/3.png" alt="" />
