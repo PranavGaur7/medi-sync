@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import DepartmentLi from './DepartmentLi'
 import hero from "../assets/hero-bg.jpg"
 import styled from "styled-components"
-const DepartMent = () => {
+import Navbar from './Navbar'
+const DepartMent = ({branch,setBranch}) => {
     const [departments, SetDepartments] = useState(["Cardio", "Neuro", "Orthopadics", "ENT", "Pediatries", "Sexologist", "gynecologist", "Dermatology"])
     const [icons, SetIcons] = useState([<i class='bx bx-donate-heart' ></i>, <i class='bx bx-brain' ></i>, <i class='bx bx-bone' ></i>, <i class='bx bx-low-vision' ></i>, <i class='bx bxs-baby-carriage' ></i>, <i class='bx bx-male-sign' ></i>, <i class='bx bx-female-sign'></i>, <i class='bx bxl-medium-old' ></i>])
     return (
         <>
+            <Navbar/>
             <Container>
                 <div className="font-josefin  bg-fixed -z-20 h-2/3 w-screen bg-cover bg-no-repeat home">
 
@@ -16,7 +18,7 @@ const DepartMent = () => {
                     </div>
                     <div className="flex items-center justify-center flex-wrap mt-56 mb-20">
                         {departments.map((department, index) => (
-                            <DepartmentLi key={index} icons={icons} department={department} index={index} />
+                            <DepartmentLi key={index} icons={icons} branch={branch} setBranch={setBranch} department={department} index={index} />
                         ))}
                     </div>
                 </div>

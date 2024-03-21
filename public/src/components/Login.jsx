@@ -6,13 +6,13 @@ import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
-const Login = ({ setIsloggedIn, isLoggedIn }) => {
+const Login = ({ user,setUser }) => {
     const navigate = useNavigate();
-    useEffect(() => {
-        if (isLoggedIn) {
-            navigate('/')
-        }
-    })
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate('/')
+    //     }
+    // })
     const [data, setData] = useState({
         email: "",
         password: "",
@@ -36,12 +36,8 @@ const Login = ({ setIsloggedIn, isLoggedIn }) => {
                   withCredentials: true
                 })
                 if (user.status === 200) {
-                    // setIsloggedIn(true);
-                    console.log(user);
+                    setUser(user)
                     toast.success("Logged in", toastContent)
-                    // setTimeout(() => {
-
-                    // }, 3000);
                     navigate('/');
                 }
 
