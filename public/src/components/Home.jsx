@@ -20,7 +20,7 @@ const Home = () => {
               <p className=''>By prioritizing convenience, accessibility, and accuracy, our platform aims to transform healthcare delivery, ensuring timely intervention and improving overall patient outcomes.</p>
               <button className="group relative h-12 w-64 overflow-hidden rounded-lg bg-white text-lg border mt-10">
                 <div className="absolute inset-0 w-3 bg-[#70adca] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                <span className="relative text-[#70adca] group-hover:text-white"><Link to={'/signup'}>Make An Appointment</Link></span>
+                <span className="relative text-[#70adca] group-hover:text-white"><Link to={'/appointment'}>Make An Appointment</Link></span>
               </button>
             </div>
             <div>
