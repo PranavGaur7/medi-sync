@@ -30,3 +30,21 @@ exports.appointment = async (req,res) => {
     }
 };
 
+exports.getDoctor = async(req,res) => {
+    try{
+        let doctor = await User.find({role: "Doctor"}).sort({department: 1})
+
+        if(doctor){
+            res.json(doctor);
+        }
+        else{
+            res.statu(400).json({
+                success:false,
+                message:"user not found",
+            })  
+        }
+    }
+    catch(error){
+        res.json(error);
+    }
+}
