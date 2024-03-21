@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar"
 import axios from "axios";
 
+
 export default function AppointmentPage({branch,setBranch,user}) {
+    
+    const [appointment, setAppointment] = useState(false);
+    
     useEffect(()=>{
         if(branch){
             console.log(branch);
@@ -16,7 +20,6 @@ export default function AppointmentPage({branch,setBranch,user}) {
                 <div className=" rounded-xl border bg-white px-7 py-6">
                     <p className="text-2xl font-semibold text-[#70adca]">Patient Name: Mohit Ranjan</p>
                     <p className="text-xl font-medium text-[#70adca] mt-2">Age: 19</p>
-                    <p>Diseases: Typhoid</p>
 
                 </div>
             </div>
@@ -31,31 +34,32 @@ export default function AppointmentPage({branch,setBranch,user}) {
                     <br />
                     <button className="group mt-5 relative h-12 w-32 overflow-hidden rounded-lg bg-white text-lg border my-3">
                         <div className="absolute inset-0 w-3 bg-[#70adca] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                        <span className="relative text-[#70adca] group-hover:text-white ">Submit</span>
+                        <span className="relative text-[#70adca] group-hover:text-white " onClick={()=>{setAppointment(true)}}>Submit</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div className=" bg-stone-100 p-10">
+        {appointment && <div className=" bg-stone-100 p-10">
+            <p className="text-center text-3xl font-extrabold mb-5">Available Appointments</p>
             <div className="flex justify-evenly align-middle text-center my-3">
                 <button className=" rounded-md border p-3 bg-white">
-                    <p>Doctor: Ramesh Signh</p>
+                    <p>Doctor: Ramesh Singh</p>
                     <p>Available: Weekdays</p>
                     <p>TimeSlot: 9:00 - 12:00</p>
                 </button>
                 <button className=" rounded-md border p-3 bg-white">
-                    <p>Doctor: Ramesh Signh</p>
+                    <p>Doctor: Akash Pathak</p>
                     <p>Available: Weekdays</p>
-                    <p>TimeSlot: 9:00 - 12:00</p>
+                    <p>TimeSlot: 13:00 - 15:00</p>
                 </button>
                 <button className=" rounded-md border p-3 bg-white">
-                    <p>Patient Name: Mohit Ranjan</p>
-                    <p>Available: Mon-Thr</p>
-                    <p>Diseases: Typhoid</p>
+                    <p>Patient Name: Param Patel</p>
+                    <p>Available: Mon-Wed-Fri</p>
+                    <p>TimeSlot: 10:00 - 12:00</p>
                 </button>
             </div>
-        </div>
+        </div>}
         <div className='flex justify-evenly align-middle bg-stone-200 p-10'>{/*footer */}
             <div className='mx-2 text-center'>
                 <p className=" font-bold">Contact Us</p>
