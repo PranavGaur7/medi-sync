@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <>
-      <div className=' font-josefin' style={{backgroundImage: "url('')"}}>
+      <div id='about' className=' font-josefin' style={{backgroundImage: "url('')"}}>
         <Navbar />
 
         <div className=''>{/*Info Section*/}
@@ -69,7 +69,7 @@ const Home = () => {
             </ul>
           </div>
         </div>
-        <div className='flex justify-evenly align-middle bg-slate-900 p-3 text-stone-400'>
+        <div id="footer" className='flex justify-evenly align-middle bg-slate-900 p-3 text-stone-400'>
         Copyright ©2024 All rights reserved | This  website is made with love by Team BackSpace :)
         </div>
       </div>

@@ -3,8 +3,8 @@ import DepartmentLi from './DepartmentLi'
 import hero from "../assets/hero-bg.jpg"
 import styled from "styled-components"
 const DepartMent = () => {
-    const [departments, SetDepartments] = useState(["Cardio", "Neuro", "Orthopadics", "ENT", "Pediatries", "Sexologist", "Physciatrist", "Dermatology"])
-    const [icons, SetIcons] = useState([<i class='bx bx-donate-heart' ></i>, <i class='bx bx-brain' ></i>, <i class='bx bx-bone' ></i>, <i class='bx bx-low-vision' ></i>, <i class='bx bxs-baby-carriage' ></i>, <i class='bx bx-male-sign' ></i>, <i class='bx bx-library' ></i>, <i class='bx bxl-medium-old' ></i>])
+    const [departments, SetDepartments] = useState(["Cardio", "Neuro", "Orthopadics", "ENT", "Pediatries", "Sexologist", "gynecologist", "Dermatology"])
+    const [icons, SetIcons] = useState([<i class='bx bx-donate-heart' ></i>, <i class='bx bx-brain' ></i>, <i class='bx bx-bone' ></i>, <i class='bx bx-low-vision' ></i>, <i class='bx bxs-baby-carriage' ></i>, <i class='bx bx-male-sign' ></i>, <i class='bx bx-female-sign'></i>, <i class='bx bxl-medium-old' ></i>])
     return (
         <>
             <Container>
