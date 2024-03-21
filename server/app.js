@@ -4,7 +4,7 @@ const cors = require('cors');
 const { login, signup } = require('./Controllers/auth');
 
 require('dotenv').config();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 
 require('./config/userDatabase').connect();
 

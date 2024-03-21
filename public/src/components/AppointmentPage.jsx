@@ -1,34 +1,36 @@
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar"
+import axios from "axios";
 
 export default function AppointmentPage() {
     const [appointments, setAppointments] = useState([]);
 
-    useEffect(() => {
-        fetchAppointments();
-    }, []);
+    // useEffect(() => {
+    //     fetchAppointments();
+    // }, []);
 
-    const fetchAppointments = async () => {
-        try {
-            const response = await axios.get('http://localhost:4000/doctor/appointments');
-            setAppointments(response.data);
-        } catch (error) {
-            console.error('Error fetching appointments:', error);
-        }
-    };
+    // const fetchAppointments = async () => {
+    //     try {
+    //         const response = await axios.get('http://localhost:4000/doctor/appointments');
+    //         setAppointments(response.data);
+    //     } catch (error) {
+    //         console.error('Error fetching appointments:', error);
+    //     }
+    // };
 
     return <>
         <Navbar />
         <div className=" bg-stone-100 p-10">
-        {appointments.map(appointment => (
-                    <div key={appointment._id} className=" w-1/3 text-center mx-auto bg-white mb-4">
-                        <div className=" rounded-md border">
-                            <p>Patient Name: {appointment.name}</p>
-                            <p>Disease: {appointment.disease}</p>
-                            <p>Doctor: {appointment.doctor}</p>
-                            <p>Time: {appointment.time}</p>
-                        </div>
+            {appointments.map(appointment => (
+                <div key={appointment._id} className=" w-1/3 text-center mx-auto bg-white mb-4">
+                    <div className=" rounded-md border">
+                        <p>Patient Name: {appointment.name}</p>
+                        <p>Disease: {appointment.disease}</p>
+                        <p>Doctor: {appointment.doctor}</p>
+                        <p>Time: {appointment.time}</p>
                     </div>
-        ))}
+                </div>
+            ))}
             <div className="flex justify-center align-middle">
                 <div className="w-[20em]">
                     <img src="src/assets/3.png" alt="" />
@@ -48,23 +50,6 @@ export default function AppointmentPage() {
 
         <div className=" bg-stone-100 p-10">
             <div className="flex justify-evenly align-middle text-center my-3">
-                <button className=" rounded-md border p-3 bg-white">
-                    <p>Doctor: Ramesh Signh</p>
-                    <p>Available: Weekdays</p>
-                    <p>TimeSlot: 9:00 - 12:00</p>
-                </button>
-                <button className=" rounded-md border p-3 bg-white">
-                    <p>Doctor: Ramesh Signh</p>
-                    <p>Available: Weekdays</p>
-                    <p>TimeSlot: 9:00 - 12:00</p>
-                </button>
-                <button className=" rounded-md border p-3 bg-white">
-                    <p>Patient Name: Mohit Ranjan</p>
-                    <p>Available: Mon-Thr</p>
-                    <p>Diseases: Typhoid</p>
-                </button>
-            </div>
-            <div className="flex justify-evenly align-middle text-center my-3 ">
                 <button className=" rounded-md border p-3 bg-white">
                     <p>Doctor: Ramesh Signh</p>
                     <p>Available: Weekdays</p>
