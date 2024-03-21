@@ -12,7 +12,6 @@ export default function Navbar(){
               <li className='mx-2'><button><Link to={'/'}>Home</Link></button></li>
               <li className='mx-2'><button><Link>About</Link></button></li>
               <li className='mx-2'><button><Link to={'/department'}>Doctors</Link></button></li>
-              <li className='mx-2'><button><Link>Contact</Link></button></li>
               <li className='mx-2'><button><Link to={'/login'}>Login</Link></button></li>
               <li className='mx-2'><button><Link to={'/signup'}>Signup</Link></button></li>
             </ul>

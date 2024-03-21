@@ -90,3 +90,21 @@ exports.login = async (req, res) => {
         });
     }
 };
+
+exports.getDoctor = async(req,res) => {
+    try{
+        let doctor = await User.findById({user: uid});
+        if(doctor){
+            res.json(doctor);
+        }
+        else{
+            res.statu(400).json({
+                success:false,
+                message:"user not found",
+            })  
+        }
+    }
+    catch(error){
+        res.json(error);
+    }
+}

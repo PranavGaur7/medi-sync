@@ -5,7 +5,7 @@ const appointmentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    disease: {
+    disease: {          
         type: String,
         required: true,
     },
