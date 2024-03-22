@@ -35,6 +35,11 @@ exports.getDoctor = async (req, res) => {
         const doctors = await User.find({ role: "Doctor" }).sort({ department: 1 });
         
         if (doctors.length > 0) {
+
+            const neuroDoctors = doctors.filter(doctor => doctor.department === "Neuro");
+            const neuroDoctorNames = neuroDoctors.map(doctor => doctor.name);
+            console.log(neuroDoctorNames);
+
             const doctorNames = doctors.map(doctor => doctor.name);
             console.log(doctorNames); // Log all doctor names
 

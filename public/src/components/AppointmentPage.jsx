@@ -14,7 +14,13 @@ export default function AppointmentPage({branch,setBranch,user}) {
     const getUserDetails = async () => {
         try {
             const response = await axios.get("http://localhost:4000/doctor/doctorList");
-            console.log(response.data[0]);
+            console.log(response);
+            const res = response.data;
+            const cardn = res.filter(res => res.department === "Cardio");
+            const dep = cardn.map(cardn => cardn.name);
+            console.log(dep);
+            
+            console.log(res);
             setDoctorDetails(response.data);
             console.log(doctorDetails[0].name);
         } catch (error) {
