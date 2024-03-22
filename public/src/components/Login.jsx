@@ -31,7 +31,7 @@ const Login = ({ user,setUser }) => {
             try {
 
                 const user = await axios.post("http://localhost:4000/medisync/login", {
-                  email, password
+                   email, password
                 }, {
                   withCredentials: true
                 })

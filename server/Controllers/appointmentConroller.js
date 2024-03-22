@@ -30,21 +30,26 @@ exports.appointment = async (req,res) => {
     }
 };
 
-exports.getDoctor = async(req,res) => {
-    try{
-        let doctor = await User.find({role: "Doctor"}).sort({department: 1})
+exports.getDoctor = async (req, res) => {
+    try {
+        const doctors = await User.find({ role: "Doctor" }).sort({ department: 1 });
+        
+        if (doctors.length > 0) {
+            const doctorNames = doctors.map(doctor => doctor.name);
+            console.log(doctorNames); // Log all doctor names
 
-        if(doctor){
-            res.json(doctor);
+            res.json(doctors);
+        } else {
+            res.status(400).json({
+                success: false,
+                message: "No doctors found",
+            });
         }
-        else{
-            res.statu(400).json({
-                success:false,
-                message:"user not found",
-            })  
-        }
-    }
-    catch(error){
-        res.json(error);
+    } catch (error) {
+        console.error("Error fetching doctors:", error);
+        res.status(500).json({
+            success: false,
+            message: "Internal server error",
+        });
     }
 }

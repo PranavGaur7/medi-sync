@@ -6,8 +6,24 @@ import axios from "axios";
 export default function AppointmentPage({branch,setBranch,user}) {
     
     const [appointment, setAppointment] = useState(false);
+    const [doctorDetails, setDoctorDetails] = useState({
+        name: "",
+        department: "",
+    });
+
+    const getUserDetails = async () => {
+        try {
+            const response = await axios.get("http://localhost:4000/doctor/doctorList");
+            console.log(response.data[0]);
+            setDoctorDetails(response.data);
+            console.log(doctorDetails[0].name);
+        } catch (error) {
+            console.error("Error fetching user details:", error);
+        }
+    }
     
     useEffect(()=>{
+        getUserDetails();
         if(branch){
             console.log(branch);
             console.log(user);
@@ -44,17 +60,17 @@ export default function AppointmentPage({branch,setBranch,user}) {
             <p className="text-center text-3xl font-extrabold mb-5">Available Appointments</p>
             <div className="flex justify-evenly align-middle text-center my-3">
                 <button className=" rounded-md border p-3 bg-white">
-                    <p>Doctor: Ramesh Singh</p>
+                    <p>Doctor: {doctorDetails[0].name}</p>
                     <p>Available: Weekdays</p>
                     <p>TimeSlot: 9:00 - 12:00</p>
                 </button>
                 <button className=" rounded-md border p-3 bg-white">
-                    <p>Doctor: Akash Pathak</p>
+                    <p>Doctor: {doctorDetails[1].name}</p>
                     <p>Available: Weekdays</p>
                     <p>TimeSlot: 13:00 - 15:00</p>
                 </button>
                 <button className=" rounded-md border p-3 bg-white">
-                    <p>Patient Name: Param Patel</p>
+                    <p>Patient Name: {doctorDetails[2].name}</p>
                     <p>Available: Mon-Wed-Fri</p>
                     <p>TimeSlot: 10:00 - 12:00</p>
                 </button>

@@ -5,7 +5,6 @@ import styled from "styled-components";
 import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
-// import { registerRoutes } from './utils/ApiRoutes';
 
 const Signup = ({ setIsloggedIn, isLoggedIn }) => {
   const navigate = useNavigate();
